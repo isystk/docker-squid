@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+
+  squid:
+    image: docker-squid/squid
+    container_name: docker-squid-squid
+    build: ./squid
+    expose:
+      - "3128"
+    ports:
+      - "3128:3128"
+    environment:
+      HTTP_PORT: "3128"
+      BASIC_AUTH_COMMENT_OUT: "#"
+      BASIC_AUTH_USERNAME: "squid"
+      BASIC_AUTH_PASSWORD: "password"
+
+  app:
+    image: docker-squid/app
+    container_name: docker-squid-app
+    build: ./app
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+    privileged: true

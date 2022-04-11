@@ -14,9 +14,14 @@ services:
       BASIC_AUTH_COMMENT_OUT: "#"
       BASIC_AUTH_USERNAME: "squid"
       BASIC_AUTH_PASSWORD: "password"
+    volumes:
+      - squid-log-store:/var/log/squid
 
   app:
     image: docker-squid/app
     container_name: docker-squid-app
     build: ./app
     privileged: true
+
+volumes:
+  squid-log-store:

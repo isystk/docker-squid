@@ -55,7 +55,7 @@ case ${1} in
     squid)
       case ${2} in
           login)
-              $DOCKER_COMPOSE exec squid /bin/sh
+              $DOCKER_COMPOSE exec --user root squid /bin/sh
           ;;
           *)
               usage

@@ -62,10 +62,10 @@ route delete default
 curl google.com 
 
 # Proxyサーバーを経由する場合はインターネットにアクセスできることを確認します
-curl google.com -x http://squid:3128
+curl google.com -x http://squid:8080
 
 # デフォルトのプロキシを設定することでオプション指定無しでアクセスできるようになります
-export http_proxy=http://squid:3128
+export http_proxy=http://squid:8080
 export https_proxy=${http_proxy}
 curl google.com 
 

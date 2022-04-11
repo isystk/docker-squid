@@ -19,8 +19,4 @@ services:
     image: docker-squid/app
     container_name: docker-squid-app
     build: ./app
-    entrypoint:
-      - tail
-      - -f
-      - /dev/null
     privileged: true

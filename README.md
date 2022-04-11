@@ -33,6 +33,7 @@ Options:
   start                    すべてのDaemonを起動します。
   stop                     すべてのDaemonを停止します。
   app login                App にログインします。
+  squid login              Squid にログインします。
   --version, -v     バージョンを表示します。
   --help, -h        ヘルプを表示します。
 ```

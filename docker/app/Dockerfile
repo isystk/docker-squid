@@ -4,3 +4,4 @@ FROM ubuntu:18.04
 RUN apt update && \
     apt install -y net-tools iputils-ping curl
 
+ENTRYPOINT ["/bin/sh", "-c", "/usr/bin/tail -f /dev/null"]
